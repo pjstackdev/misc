@@ -25,3 +25,5 @@ sorted_frequencies[:10]
 counts = input_file.map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
 counts.collect()
 counts.saveAsTextFile("hdfs:///user/maria_dev/testing4/everything_count.txt")
+
+spark-submit --master local[*] Assignment4/sentiment_classification.py txt_sentoken

@@ -1,0 +1,52 @@
+from pyspark import SparkContext
+from pyspark.sql import SQLContext, DataFrame
+from pyspark.ml import Pipeline
+from pyspark.ml.feature import IDF, Tokenizer, CountVectorizer, StopWordsRemover, StringIndexer from pyspark.ml.classification import DecisionTreeClassifier, RandomForestClassifier
+from pyspark.ml.evaluation import BinaryClassificationEvaluator
+import sys
+from functools import reduce
+
+# Function for combining multiple DataFrames row-wise
+def unionAll (*dfs):
+	return reduce(DataFrame.unionAll, dfs)
+if __name__=="main":
+	# Create a SparkContext and an SQLContext
+	sc = SparkContext (appName="Sentiment Classification")
+	sqlContext = SQLContext(sc)
+	sc.setLogLevel ('ERROR')
+	# Load data
+	# wholeTextFiles (path, [...]) reads a directory of text files from a filesystem
+	# Each file is read as a single record and returned in a key-value pair
+	# The key is the path and the value is the content of each file
+	reviews = sc.wholeTextFiles('/home/lab/'+sys.argv[1]+'/*/*')
+	
+	# Create tuples: (class label, review text) - we ignore the file path
+	# 1.0 for positive reviews
+	# 0.0 for negative reviews
+	reviews_f = reviews.map(lambda row: (1.0 if 'pos' in row[0] else 0.0, row[1]))
+
+	# Convert data into a Spark SQL DataFrame
+	# The first column contains the class label
+	# The second column contains the review text
+	dataset = reviews_f.toDF (['class_label', 'review'])
+	
+	#----- PART II: FEATURE ENGINEERING
+	# Tokenize the review text column into a list of words 
+	tokenizer = Tokenizer (inputCol='review', outputCol='words') 
+	words_data = tokenizer.transform(dataset)
+	
+	# Randomly split data into a training set, a development set and a test set 
+	# train = 60% of the data, dev = 20% of the data, test = 20% of the data 
+	# The random seed should be set to 42
+	
+	# The random seed should be set to 42
+	(train, dev, test) = words_data.randomSplit([.6, .2, .2], seed = 42)
+	
+	# TODO: Count the number of instances in, respectively, train, dev and test
+	# Print the counts to standard output
+  train_counts = train.count()
+  dev_counts = dev.count()
+  test_counts = test.count()
+	print('|train counts:', train_counts,'|dev counts:', dev_counts, '|dev counts:',test_counts)
+
+

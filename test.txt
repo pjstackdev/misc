@@ -1,4 +1,8 @@
 spark-submit --master local[*] sentiment_classification.py txt_sentoken
 spark-submit --master local[*] Assignment4/sentiment_classification.py txt_sentoken
 
-data = spark.read.text("hdfs:///user/maria_dev/testing4/txt_sentoken/*/*.txt")
+data = spark.read.text("hdfs:///user/maria_dev/testing4/*/*.txt")
+
+data.coalesce(1).write.text("hdfs:///user/maria_dev/testing4/everything.txt")
+
+input_file = sc.textFile("hdfs:///user/maria_dev/testing4/everything.txt")

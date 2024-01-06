@@ -1,0 +1,2 @@
+spark-submit --master local[*] sentiment_classification.py txt_sentoken
+spark-submit --master local[*] Assignment4/sentiment_classification.py txt_sentoken

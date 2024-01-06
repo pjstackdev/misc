@@ -6,6 +6,22 @@ data = spark.read.text("hdfs:///user/maria_dev/testing4/*/*.txt")
 data.coalesce(1).write.text("hdfs:///user/maria_dev/testing4/everything.txt")
 input_file = sc.textFile("hdfs:///user/maria_dev/testing4/everything.txt")
 input_file.take(5)
+
+input_file_word_counts = input_file.flatMap(lambda line: line.split(" ")).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
+input_file_word_counts.take(5)
+input_file_word_counts.count()
+fm = input_file.flatMap(lambda line: line.split(" "))
+fm.take(5)
+fm.count()
+
+most frequent
+sorted_frequencies = sorted(input_file_word_counts.collect(), key=lambda x: x[1], reverse=True)
+sorted_frequencies[:10]
+
+least frequent
+sorted_frequencies = sorted(input_file_word_counts.collect(), key=lambda x: x[1], reverse=False)
+sorted_frequencies[:10]
+
 counts = input_file.map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
 counts.collect()
 counts.saveAsTextFile("hdfs:///user/maria_dev/testing4/everything_count.txt")

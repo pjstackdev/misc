@@ -171,13 +171,14 @@ if __name__=="main":
     # TODO: Check for signs of overfitting (by evaluating the model on the training set)
     # [FIX ME!] Write code below
 
-    rf_classifier_default = RandomForestClassifier (labelCol = 'label', featuresCol = 'TFIDF', numTrees=20)
-    rf_pipeline_default = Pipeline (stages=[label_indexer, rf_classifier_default])
-    rf_model_default = rf_pipeline_default.fit(train_tfidf)
+    #rf_classifier_default = RandomForestClassifier (labelCol = 'label', featuresCol = 'TFIDF', numTrees=20)
+    #rf_pipeline_default = Pipeline (stages=[label_indexer, rf_classifier_default])
+    #rf_model_default = rf_pipeline_default.fit(train_tfidf)
     rf_predictions_default_train = rf_model_default.transform(train_tfidf)
     auc_rf_default_train = evaluator.evaluate(rf_predictions_default_train, {evaluator.metricName: 'areaUnderROC'})
     print('Random Forest, Default Parameters, Training Set, AUC:' + str(auc_rf_default_train))
-
+	print("Possible over-fit, train_AUC:", auc_rf_default_train, ", dev_AUC:", auc_rf_default_dev) if auc_rf_default_train > auc_rf_default_dev else print("Looks probably OK, no sign of overfit, train_AUC:", auc_rf_default_train, ", dev_AUC:", auc_rf_default_dev)
+    
     # TODO: Tune the random forest model by changing one of its hyperparameters
     # Build and evalute (on the dev set) another random forest with the following numTrees value: 100. # [FIX ME!] Write code below
     

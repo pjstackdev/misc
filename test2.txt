@@ -49,4 +49,16 @@ if __name__=="main":
   test_counts = test.count()
 	print('|train counts:', train_counts,'|dev counts:', dev_counts, '|dev counts:',test_counts)
 
+    # TODO: Count the number of positive/negative instances in, respectively, train, dev and test # Print the class distribution for each to standard output
+    # The class distribution should be specified as the % of positive examples
+    (train_pos_counts, train_neg_counts) = train.filter("class_label = 1.0").count(), train.filter("class_label = 0.0").count())
+    (dev_pos_counts, dev_neg_counts) = (dev.filter("class_label = 1.0").count(), dev.filter("class_label = 0.0").count())
+    (test_pos_counts, test_neg_counts) = (test.filter("class_label = 1.0").count(), test.filter("class_label = 0.0").count())
+
+    train_pos_perc, dev_pos_perc, test_pos_perc = ((train_pos_counts / train_count) * 100, (dev_pos_counts / dev_count) * 100, (test_pos_counts / test_count) * 100)
+	
+	print ('train: pos:', round(train_pos_perc,1), 'neg:',round(100 - train_pos_perc,1) )
+	print ('dev: pos:', round(dev_pos_perc,1), 'neg:',round(100 - dev_pos_perc,1) )
+	print ('test: pos:', round(test_pos_perc,1), 'neg:',round(100 - test_pos_perc,1) )
+
 

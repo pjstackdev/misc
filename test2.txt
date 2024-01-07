@@ -198,7 +198,18 @@ if __name__=="main":
     print('numTreesValue: ', numTreesValueHypertune, ', Possible over-fit, train_AUC:', auc_rf_alter_train, ', dev_AUC:', auc_rf_alter_dev) if auc_rf_alter_train > auc_rf_alter_dev else print('numTreesValue: ', numTreesValueHypertune, ', Looks probably OK, no sign of overfit, train_AUC:', auc_rf_alter_train, ', dev_AUC:', auc_rf_alter_dev)
     
     # ----- PART IV: MODEL EVALUATION
-    # Create a new dataset combining the train and dev sets traindev_tfidf = unionAll (train_tfidf, dev_tfidf)
+    # Create a new dataset combining the train and dev sets 
+    traindev_tfidf = unionAll (train_tfidf, dev_tfidf)
     
     # TODO: Evalute the best model on the test set
     # Build a new model from the concatenation of the train and dev sets in order to better utilize the data # [FIX ME!]
+    
+    numTreesValueHypertune=100
+    rf_classifier_alter_best = RandomForestClassifier (labelCol = 'label', featuresCol = 'TFIDF', numTrees=numTreesValueHypertune)
+    rf_pipeline_alter_best = Pipeline (stages=[label_indexer, rf_classifier_alter_best])
+    rf_model_alter_best = rf_pipeline_alter_best.fit(traindev_tfidf)
+    ###########
+    rf_predictions_alter_best_test = rf_model_alter_best.transform(test_tfidf)
+    auc_rf_alter_best_test = evaluator.evaluate(rf_predictions_alter_best_test, {evaluator.metricName: 'areaUnderROC'})
+    print('numTreesValue: ', numTreesValueHypertune, ', Random Forest, alter_best Parameters, Test Set, AUC:', auc_rf_alter_best_test)
+    ###########

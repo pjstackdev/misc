@@ -84,12 +84,15 @@ sorted_frequencies[:100]
         dt_classifier_alter = DecisionTreeClassifier (labelCol = 'label', featuresCol = 'TFIDF', maxDepth=maxDepth_alter_value)
         dt_pipeline_alter = Pipeline(stages=[label_indexer, dt_classifier_alter])
         dt_model_alter = dt_pipeline_alter.fit(train_tfidf)
+        ################    
         dt_predictions_alter_dev = dt_model_alter.transform(dev_tfidf)
         auc_dt_alter_dev = evaluator.evaluate(dt_predictions_alter_dev, {evaluator.metricName: 'areaUnderROC'})
-        print('Decision Tree, maxDepth: ', maxDepth_alter_value, ', Development Set, AUC: ', auc_dt_default_dev)
+        print('Decision Tree, maxDepth: ', maxDepth_alter_value, ', Development Set, AUC: ', auc_dt_alter_dev)
         ################
         dt_predictions_alter_train = dt_model_alter.transform(train_tfidf)
         auc_dt_alter_train = evaluator.evaluate(dt_predictions_alter_train, {evaluator.metricName: 'areaUnderROC'})
-        print('Decision Tree, maxDepth:', maxDepth_alter_value, ', Training Set, AUC: ', auc_dt_default_train)	
-        print('maxDepth:', maxDepth_alter_value,", Possible over-fit, train_AUC:", auc_dt_default_train, ", dev_AUC:", auc_dt_default_dev) if auc_dt_default_train > auc_dt_default_dev else print('maxDepth:', maxDepth_alter_value,", Looks probably OK, no sign of overfit, train_AUC:", auc_dt_default_train, ", dev_AUC:", auc_dt_default_dev)
+        print('Decision Tree, maxDepth:', maxDepth_alter_value, ', Training Set, AUC: ', auc_dt_alter_train)	
+        ################
+        print('maxDepth:', maxDepth_alter_value,", Possible over-fit, train_AUC:", auc_dt_alter_train, ", dev_AUC:", auc_dt_alter_dev) if auc_dt_alter_train > auc_dt_alter_dev else print('maxDepth:', maxDepth_alter_value,", Looks probably OK, no sign of overfit, train_AUC:", auc_dt_alter_train, ", dev_AUC:", auc_dt_alter_dev)
+        
     

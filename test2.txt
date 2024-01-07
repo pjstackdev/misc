@@ -68,3 +68,11 @@ sorted_frequencies[:100]
 
     cv_vocab_size = len(count_vectorizer_model.vocabulary)
     print("Post-filter vocab size: ", cv_vocab_size)
+
+    # [DONE]TODO: Check for signs of overfitting (by evaluating the model on the training set)
+    # [DONE][FIX ME!] Write code below
+    dt_predictions_default_train = dt_model_default.transform(train_tfidf)
+    auc_dt_default_train = evaluator.evaluate(dt_predictions_default_train, {evaluator.metricName: 'areaUnderROC'})
+    print('Decision Tree, Default Parameters, Training Set, AUC: ' + str(auc_dt_default_train))
+    print("Possible over-fit, train_AUC:", auc_dt_default_train, "dev_AUC:", auc_dt_default_dev) if auc_dt_default_train > auc_dt_default_dev else print("Looks probably OK, no sign of overfit, train_AUC:", auc_dt_default_train, "dev_AUC:", auc_dt_default_dev)
+    

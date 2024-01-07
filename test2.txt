@@ -75,4 +75,21 @@ sorted_frequencies[:100]
     auc_dt_default_train = evaluator.evaluate(dt_predictions_default_train, {evaluator.metricName: 'areaUnderROC'})
     print('Decision Tree, Default Parameters, Training Set, AUC: ' + str(auc_dt_default_train))
     print("Possible over-fit, train_AUC:", auc_dt_default_train, "dev_AUC:", auc_dt_default_dev) if auc_dt_default_train > auc_dt_default_dev else print("Looks probably OK, no sign of overfit, train_AUC:", auc_dt_default_train, "dev_AUC:", auc_dt_default_dev)
+
+    # TODO: Tune the decision tree model by changing one of its hyperparameters
+    # Build and evalute decision trees with the following maxDepth values: 3 and 4.
+    # [FIX ME!] Write code below
+    maxDepth_alter_vals = [3, 4]
+    for maxDepth_alter_value in maxDepth_alter_vals:
+        dt_classifier_alter = DecisionTreeClassifier (labelCol = 'label', featuresCol = 'TFIDF', maxDepth=maxDepth_alter_value)
+        dt_pipeline_alter = Pipeline(stages=[label_indexer, dt_classifier_alter])
+        dt_model_alter = dt_pipeline_alter.fit(train_tfidf)
+        dt_predictions_alter_dev = dt_model_alter.transform(dev_tfidf)
+        auc_dt_alter_dev = evaluator.evaluate(dt_predictions_alter_dev, {evaluator.metricName: 'areaUnderROC'})
+        print('Decision Tree, maxDepth: ', maxDepth_alter_value, ', Development Set, AUC: ', auc_dt_default_dev)
+        ################
+        dt_predictions_alter_train = dt_model_alter.transform(train_tfidf)
+        auc_dt_alter_train = evaluator.evaluate(dt_predictions_alter_train, {evaluator.metricName: 'areaUnderROC'})
+        print('Decision Tree, maxDepth:', maxDepth_alter_value, ', Training Set, AUC: ', auc_dt_default_train)	
+        print('maxDepth:', maxDepth_alter_value,", Possible over-fit, train_AUC:", auc_dt_default_train, ", dev_AUC:", auc_dt_default_dev) if auc_dt_default_train > auc_dt_default_dev else print('maxDepth:', maxDepth_alter_value,", Looks probably OK, no sign of overfit, train_AUC:", auc_dt_default_train, ", dev_AUC:", auc_dt_default_dev)
     

@@ -65,3 +65,6 @@ train_word_counts = train.select("words").flatMap(lambda line: line.split(" ")).
 train_word_counts = train.select("words").flatMap(lambda x: x['words']).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
 sorted_frequencies = sorted(train_word_counts.collect(), key=lambda x: x[1], reverse=True)
 sorted_frequencies[:100]
+
+    cv_vocab_size = len(count_vectorizer_model.vocabulary)
+    print("Post-filter vocab size: ", cv_vocab_size)

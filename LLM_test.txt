@@ -1,0 +1,389 @@
+
+(venv) .\llm-benchmark-master>python benchmark.py --verbose --prompts "What is the sky blue?" "Write a report on the financials of Nvidia"
+
+Verbose: True
+Skip models: []
+Prompts: ['What is the sky blue?', 'Write a report on the financials of Nvidia']
+Evaluating models: ['metallama:latest', 'gemma2:latest', 'llama3:latest']
+
+
+
+Benchmarking: metallama:latest
+Prompt: What is the sky blue?
+The color of the sky can appear in different shades and hues depending on various factors, but generally, it appears blue to our eyes due to a phenomenon called Rayleigh scattering.
+
+Here's what happens:
+
+When sunlight enters Earth's atmosphere, it encounters tiny molecules of gases such as nitrogen (N2) and oxygen (O2). These molecules scatter the light in all directions, but they scatter shorter (blue) wavelengths more than longer (red) wavelengths. This is known as Rayleigh scattering, named after the British physicist Lord Rayleigh, who first described the phenomenon in the late 19th century.
+
+As a result of this scattering, the blue light is distributed throughout the atmosphere, giving the sky its blue appearance. The amount of scattering that occurs depends on several factors, including:
+
+1. **Altitude**: The higher you go, the thinner the atmosphere becomes, and less scattering occurs.
+2. **Atmospheric conditions**: Dust, water vapor, and pollutants in the air can scatter light in different ways, affecting the sky's color.
+3. **Time of day**: During sunrise and sunset, the sun's rays have to travel through more of the atmosphere, which scatters the shorter wavelengths even more, making the sky appear more orange or red.
+
+So, to summarize, the sky appears blue because of Rayleigh scattering, which favors the scattering of shorter (blue) wavelengths over longer (red) wavelengths.Response:
+
+----------------------------------------------------
+        metallama:latest
+                Prompt eval: 323.82 t/s
+                Response: 26.35 t/s
+                Total: 27.69 t/s
+
+        Stats:
+                Prompt tokens: 16
+                Response tokens: 286
+                Model load time: 7.42s
+                Prompt eval time: 0.05s
+                Response time: 10.86s
+                Total time: 18.33s
+----------------------------------------------------
+
+
+
+Benchmarking: metallama:latest
+Prompt: Write a report on the financials of Nvidia
+**Nvidia Corporation Financial Report**
+
+**Introduction:**
+Nvidia Corporation is a leading American technology company that designs and manufactures graphics processing units (GPUs) and high-performance computing hardware. The company was founded in 1993 and has since become a global leader in the fields of artificial intelligence, gaming, and professional visualization. This report provides an overview of Nvidia's financial performance for the fiscal years 2020, 2019, and 2018.
+
+**Revenue:**
+
+| Fiscal Year | Revenue (in billions USD) |
+| --- | --- |
+| 2020 | 14.29 |
+| 2019 | 11.72 |
+| 2018 | 9.71 |
+
+As evident from the above table, Nvidia's revenue has consistently grown over the past three years, with a significant increase of $2.57 billion in fiscal year 2020 compared to the previous year.
+
+**Gross Profit:**
+
+| Fiscal Year | Gross Profit (in billions USD) |
+| --- | --- |
+| 2020 | 9.33 |
+| 2019 | 7.43 |
+| 2018 | 6.11 |
+
+Nvidia's gross profit has also experienced a steady increase over the past three years, with a significant jump of $1.90 billion in fiscal year 2020 compared to the previous year.
+
+**Operating Income:**
+
+| Fiscal Year | Operating Income (in billions USD) |
+| --- | --- |
+| 2020 | 4.51 |
+| 2019 | 3.25 |
+| 2018 | 2.41 |
+
+Nvidia's operating income has also shown a significant increase over the past three years, with an improvement of $1.26 billion in fiscal year 2020 compared to the previous year.
+
+**Net Income:**
+
+| Fiscal Year | Net Income (in billions USD) |
+| --- | --- |
+| 2020 | 3.96 |
+| 2019 | 2.85 |
+| 2018 | 2.21 |
+
+Nvidia's net income has also experienced a steady increase over the past three years, with an improvement of $1.11 billion in fiscal year 2020 compared to the previous year.
+
+**Cash and Short-Term Investments:**
+
+| Fiscal Year | Cash and Short-Term Investments (in billions USD) |
+| --- | --- |
+| 2020 | 13.43 |
+| 2019 | 12.51 |
+| 2018 | 11.41 |
+
+Nvidia's cash and short-term investments have consistently grown over the past three years, with an increase of $1.92 billion in fiscal year 2020 compared to the previous year.
+
+**Debt:**
+
+| Fiscal Year | Debt (in billions USD) |
+| --- | --- |
+| 2020 | 2.61 |
+| 2019 | 2.41 |
+| 2018 | 2.21 |
+
+Nvidia's debt has remained relatively stable over the past three years, with a slight increase of $0.20 billion in fiscal year 2020 compared to the previous year.
+
+**Conclusion:**
+In conclusion, Nvidia's financial performance for the fiscal years 2020, 2019, and 2018 demonstrates a consistent trend of growth in revenue, gross profit, operating income, and net income. The company's cash and short-term investments have also increased significantly over the past three years. While debt has remained relatively stable, it is essential for Nvidia to continue managing its debt levels effectively to ensure long-term financial stability.
+
+**Recommendations:**
+
+1. **Invest in Research and Development:** To maintain its competitive edge, Nvidia should continue investing in research and development to improve its products and technologies.
+2. **Diversify Product Portfolio:** Diversifying Nvidia's product portfolio can help reduce dependence on a single market segment and increase overall revenue growth.
+3. **Optimize Debt Management:** Nvidia should focus on optimizing its debt management by reducing debt levels and ensuring that the company's debt-to-equity ratio remains within acceptable limits.
+
+By following these recommendations, Nvidia can continue to grow and maintain its position as a leading technology company in the industry.Response:
+
+----------------------------------------------------
+        metallama:latest
+                Prompt eval: 282.97 t/s
+                Response: 25.58 t/s
+                Total: 26.10 t/s
+
+        Stats:
+                Prompt tokens: 19
+                Response tokens: 856
+                Model load time: 0.03s
+                Prompt eval time: 0.07s
+                Response time: 33.46s
+                Total time: 33.56s
+----------------------------------------------------
+
+
+
+Benchmarking: gemma2:latest
+Prompt: What is the sky blue?
+The sky appears blue due to a phenomenon called **Rayleigh scattering**.
+
+Here's a simplified explanation:
+
+1. **Sunlight:** Sunlight is actually white, containing all colors of the rainbow.
+2. **Atmosphere:** Earth's atmosphere is made up of tiny particles like nitrogen and oxygen molecules.
+3. **Scattering:** When sunlight enters the atmosphere, it collides with these particles. Blue light, having a shorter wavelength, is scattered more effectively than other colors by these particles.
+4. **Our Perception:** This scattered blue light reaches our eyes from all directions, making the sky appear blue.
+
+**Why not other colors?**
+
+* Longer wavelengths like red and orange are scattered less, which is why we see these colors more prominently during sunrise and sunset when sunlight travels through a thicker layer of atmosphere.
+
+Let me know if you'd like a more detailed explanation or have any other questions!Response:
+
+----------------------------------------------------
+        gemma2:latest
+                Prompt eval: 137.90 t/s
+                Response: 22.79 t/s
+                Total: 24.28 t/s
+
+        Stats:
+                Prompt tokens: 15
+                Response tokens: 189
+                Model load time: 17.78s
+                Prompt eval time: 0.11s
+                Response time: 8.29s
+                Total time: 26.19s
+----------------------------------------------------
+
+
+
+Benchmarking: gemma2:latest
+Prompt: Write a report on the financials of Nvidia
+## NVIDIA: A Financial Powerhouse
+
+**Executive Summary:**  NVIDIA (NVDA) is a leading global semiconductor company specializing in graphics processing units (GPUs), particularly for gaming, professional visualization, and artificial intelligence (AI). The company boasts a strong financial performance, fueled by booming demand for its GPUs in gaming, data centers, and automotive sectors.
+
+**Key Financial Highlights (FY2023 Q3 ended October 31, 2023):**
+
+* **Revenue:** $16.4 billion, up 59% year-over-year, driven by strong demand across all segments
+* **Net Income:** $6.8 billion, a substantial increase from $3.0 billion in the same period last year.
+* **Earnings per Share (EPS):** $2.01, significantly higher than $0.87 in Q3 FY2022.
+
+**Revenue Breakdown by Segment:**
+
+* **Gaming:** $6.6 billion, up 4% YoY, experiencing a modest decline due to channel inventory adjustments but remains the company's largest revenue source.
+* **Data Center:** $10.5 billion, soaring 83% YoY, reflecting strong demand for AI and high-performance computing (HPC).
+* **Professional Visualization:** $1.0 billion, up 42% YoY, benefiting from increased adoption of NVIDIA's GPUs in creative industries and scientific research.
+* **Automotive & Other:** $687 million, down 5% YoY, impacted by global supply chain challenges and automotive industry headwinds.
+
+**Key Financial Metrics:**
+
+* **Gross Margin:** 67.0%, indicating strong pricing power and efficient manufacturing operations.
+* **Operating Margin:** 41.0%, reflecting the company's high profitability and operational leverage.
+* **Cash Flow from Operations:** $4.5 billion, demonstrating robust cash generation capabilities.
+
+**Growth Drivers:**
+
+* **AI Boom:** NVIDIA is at the forefront of the AI revolution, with its GPUs powering vast data centers and enabling breakthroughs in machine learning and deep learning applications.
+* **Metaverse Expansion:** The growing interest in the metaverse creates new opportunities for NVIDIA's gaming and visualization technologies.
+* **Automotive Industry Adoption:**  NVIDIA's DRIVE platform is gaining traction in autonomous driving and in-vehicle infotainment systems.
+
+**Challenges:**
+
+* **Global Economic Slowdown:** A potential recession could impact consumer spending on gaming hardware and dampen demand in the data center sector.
+* **Supply Chain Constraints:** Ongoing chip shortages and geopolitical tensions may continue to pose challenges to NVIDIA's production capacity.
+* **Competition:** Intense competition from AMD, Intel, and other players in the GPU market requires NVIDIA to constantly innovate and improve its offerings.
+
+**Conclusion:**
+
+NVIDIA is a financially sound company with a strong track record of growth and profitability. The company is well-positioned to capitalize on the long-term trends driving demand for AI, gaming, and automotive technologies. However, it faces challenges from economic headwinds, supply chain disruptions, and intense competition.
+
+
+ **Disclaimer:** This report provides a general overview of NVIDIA's financials and should not be considered investment advice. Investors should conduct their own thorough research and consult with a financial advisor before making any investment decisions.Response:
+
+----------------------------------------------------
+        gemma2:latest
+                Prompt eval: 210.95 t/s
+                Response: 21.82 t/s
+                Total: 22.30 t/s
+
+        Stats:
+                Prompt tokens: 17
+                Response tokens: 690
+                Model load time: 0.06s
+                Prompt eval time: 0.08s
+                Response time: 31.62s
+                Total time: 31.77s
+----------------------------------------------------
+
+
+
+Benchmarking: llama3:latest
+Prompt: What is the sky blue?
+A question that has puzzled philosophers and scientists for centuries!
+
+The short answer is: the sky appears blue to us because of the way that light interacts with our atmosphere.
+
+Here's a more detailed explanation:
+
+1. **Sunlight**: When the sun emits light, it produces a broad spectrum of colors, including all the hues of the rainbow.
+2. **Atmosphere**: As this sunlight enters Earth's atmosphere, it encounters tiny molecules of gases like nitrogen (N2) and oxygen (O2). These molecules scatter the shorter, blue wavelengths of light more than the longer, red wavelengths.
+3. **Rayleigh scattering**: This scattering effect is known as Rayleigh scattering, named after the British physicist Lord Rayleigh, who first described it in the late 19th century. The smaller molecules in our atmosphere are more effective at scattering the shorter wavelengths of light, like blue and violet, than the longer wavelengths, like red and orange.
+4. **Blue dominance**: As a result of this scattering, the blue light is dispersed throughout the atmosphere, reaching our eyes from all directions. This is why the sky appears blue to us – because our atmosphere is selectively filtering out the shorter wavelengths of light and transmitting more of the blue and violet hues.
+
+So, to summarize: the sky appears blue because of the way that sunlight interacts with the tiny molecules in our atmosphere, which scatters shorter wavelengths like blue and violet more than longer wavelengths like red and orange.Response: 
+
+----------------------------------------------------
+        llama3:latest
+                Prompt eval: 163.88 t/s
+                Response: 31.51 t/s
+                Total: 32.89 t/s
+
+        Stats:
+                Prompt tokens: 16
+                Response tokens: 293
+                Model load time: 14.79s
+                Prompt eval time: 0.10s
+                Response time: 9.30s
+                Total time: 24.19s
+----------------------------------------------------
+
+
+
+Benchmarking: llama3:latest
+Prompt: Write a report on the financials of Nvidia
+**Nvidia Corporation Financial Report**
+
+**Summary:**
+
+Nvidia Corporation (NVDA) is a leading technology company that specializes in designing and manufacturing graphics processing units (GPUs) for gaming, professional visualization, and artificial intelligence. In this report, we will analyze the company's financial performance, highlighting its strengths, weaknesses, opportunities, and threats.
+
+**Financial Highlights:**
+
+* **Revenue:** Nvidia's revenue has consistently grown over the years, reaching $14.13 billion in 2020, a 42% increase from 2019.
+* **Net Income:** The company reported net income of $3.64 billion in 2020, a 121% jump from 2019.
+* **Gross Margin:** Nvidia's gross margin was 56.5% in 2020, indicating strong pricing power and operational efficiency.
+* **Operating Expenses:** Operating expenses increased by 24% to $2.45 billion in 2020, driven by investments in research and development, sales, and marketing.
+* **Cash Flow:** Nvidia generated significant cash flow from operations, with an inflow of $5.43 billion in 2020.
+
+**Segmental Performance:**
+
+* **Gaming Segment:** The gaming segment accounted for the majority of Nvidia's revenue (63%) in 2020, driven by strong demand for GPUs and growth in e-sports and cloud gaming.
+* **Professional Visualization Segment:** The professional visualization segment grew rapidly, with revenue increasing by 54% to $1.34 billion in 2020, driven by adoption in industries such as healthcare, finance, and education.
+* **Artificial Intelligence (AI) Segment:** The AI segment reported revenue of $444 million in 2020, up 75% from the previous year, driven by growth in datacenter and cloud computing.
+
+**Strengths:**
+
+1. **Diversified Product Portfolio:** Nvidia's diversified product portfolio across gaming, professional visualization, and AI segments has enabled it to reduce dependence on any single market.
+2. **Strong Brand Recognition:** The company enjoys strong brand recognition, with a loyal customer base and high demand for its products.
+3. **Innovative Technology:** Nvidia's innovative technology, such as ray tracing and AI-enhanced graphics processing, has enabled it to maintain a competitive edge in the industry.
+
+**Weaknesses:**
+
+1. **Dependence on Gaming Segment:** While gaming is a significant contributor to revenue, the segment can be volatile due to changes in consumer spending habits.
+2. **Competition:** Nvidia faces intense competition from other GPU manufacturers, such as AMD and Intel.
+3. **Supply Chain Risks:** The company's dependence on complex global supply chains makes it vulnerable to disruptions and shortages.
+
+**Opportunities:**
+
+1. **Growth in Cloud Gaming:** The growing trend of cloud gaming presents an opportunity for Nvidia to expand its reach into the gaming market.
+2. **Increasing Adoption of AI:** The increasing adoption of AI across industries, such as healthcare and finance, offers a significant growth opportunity for Nvidia's AI segment.
+3. **Expansion into New Markets:** Nvidia can leverage its technology expertise to expand into new markets, such as autonomous vehicles, robotics, and cybersecurity.
+
+**Threats:**
+
+1. **Global Economic Uncertainty:** Global economic uncertainty and potential recessions could impact consumer spending habits and demand for gaming products.
+2. **Trade Wars and Tariffs:** Trade wars and tariffs can increase costs and disrupt supply chains, affecting Nvidia's ability to deliver products to customers.
+3. **Competition from Emerging Technologies:** The emergence of new technologies, such as quantum computing or neuromorphic processing, could potentially disrupt the GPU market.
+
+**Conclusion:**
+
+Nvidia Corporation is a leading technology company with a strong track record of growth and innovation. While it faces challenges in the competitive GPU market, its diversified product portfolio, strong brand recognition, and innovative technology position it well for future success. The company's focus on emerging markets such as cloud gaming, AI, and autonomous vehicles presents significant opportunities for growth. However, global economic uncertainty, trade wars, and competition from emerging technologies pose potential threats to the company's financial performance.
+
+**Recommendations:**
+
+1. **Continued Investment in Research and Development:** Nvidia should continue to invest in research and development to drive innovation and maintain its competitive edge.
+2. **Diversification of Product Portfolio:** The company should consider diversifying its product portfolio beyond GPUs to reduce dependence on any single market.
+3. **Strategic Partnerships:** Nvidia should form strategic partnerships with other companies, academia, and governments to accelerate the adoption of AI and autonomous vehicles.
+
+By following these recommendations and addressing its weaknesses, Nvidia Corporation is well-positioned for continued growth and success in the years ahead.Response:
+
+----------------------------------------------------
+        llama3:latest
+                Prompt eval: 301.20 t/s
+                Response: 30.67 t/s
+                Total: 31.21 t/s
+
+        Stats:
+                Prompt tokens: 19
+                Response tokens: 965
+                Model load time: 0.04s
+                Prompt eval time: 0.06s
+                Response time: 31.47s
+                Total time: 31.57s
+----------------------------------------------------
+
+Average stats:
+
+----------------------------------------------------
+        metallama:latest
+                Prompt eval: 300.29 t/s
+                Response: 25.77 t/s
+                Total: 26.49 t/s
+
+        Stats:
+                Prompt tokens: 35
+                Response tokens: 1142
+                Model load time: 7.45s
+                Prompt eval time: 0.12s
+                Response time: 44.31s
+                Total time: 51.89s
+----------------------------------------------------
+
+Average stats:
+
+----------------------------------------------------
+        gemma2:latest
+                Prompt eval: 168.99 t/s
+                Response: 22.02 t/s
+                Total: 22.71 t/s
+
+        Stats:
+                Prompt tokens: 32
+                Response tokens: 879
+                Model load time: 17.84s
+                Prompt eval time: 0.19s
+                Response time: 39.92s
+                Total time: 57.96s
+----------------------------------------------------
+
+Average stats:
+
+----------------------------------------------------
+        llama3:latest
+                Prompt eval: 217.78 t/s
+                Response: 30.86 t/s
+                Total: 31.59 t/s
+
+        Stats:
+                Prompt tokens: 35
+                Response tokens: 1258
+                Model load time: 14.82s
+                Prompt eval time: 0.16s
+                Response time: 40.76s
+                Total time: 55.76s
+----------------------------------------------------
+
